@@ -377,3 +377,20 @@ document.getElementById("checkoutBtn").addEventListener("click", function (e) {
     window.location.href = "checkout.html";
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/products/all', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      console.log('Response status:', response.status); // Debug
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.json();
+    })
+    .then(data => console.log('Data:', data))
+    .catch(error => console.error('Error:', error));
+});
