@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "allowedRoles": ["anonymous"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://mango-bay-0f36e0b00.1.azurestaticapps.net",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type,Authorization"
+      }
+    }
+  ],
+  "globalHeaders": {
+    "Access-Control-Allow-Origin": "https://mango-bay-0f36e0b00.1.azurestaticapps.net"
+  }
+}
