@@ -26,6 +26,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_BAY_0F36E0B00 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
+            # Thêm hai dòng này:
+          build_preset: "custom" # Chỉ định rằng đây là cài đặt tùy chỉnh
+          app_build_command: "" # Không có lệnh build cụ thể nếu chỉ là HTML/CSS/JS tĩnh
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "./TeaHouse-1.0.0" # App source code path
