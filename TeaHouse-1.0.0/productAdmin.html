@@ -449,7 +449,7 @@
           // update
           try {
             await axios.put(
-              `http://localhost:8080/api/admin/products/${id}`,
+              `https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/admin/products/${id}`,
               product
             );
             Swal.fire("Thành công", "Sửa sản phẩm thành công!", "success");
@@ -472,7 +472,7 @@
           // create
           try {
             await axios.post(
-              `http://localhost:8080/api/admin/products`,
+              `https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/admin/products`,
               product
             );
             Swal.fire("Thành công", "Thêm sản phẩm thành công!", "success");
@@ -495,7 +495,7 @@
         if (!isConfirmed) return;
 
         try {
-          await axios.delete(`http://localhost:8080/api/admin/products/${id}`);
+          await axios.delete(`https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/admin/products/${id}`);
           Swal.fire("Đã xóa", "Xóa sản phẩm thành công!", "success");
           fetchProducts();
         } catch (error) {
@@ -504,7 +504,7 @@
       }
 
       function fetchProducts() {
-        axios.get("http://localhost:8080/api/admin/products").then((res) => {
+        axios.get("https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/admin/products").then((res) => {
           const tbody = document.getElementById("productTable");
           tbody.innerHTML = "";
           if (res.data.length === 0) {

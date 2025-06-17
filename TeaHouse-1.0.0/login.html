@@ -271,7 +271,7 @@
           const rememberMe = document.getElementById("remember-me").checked;
 
           try {
-            const res = await fetch("http://localhost:8080/api/login", {
+            const res = await fetch("https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/login", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ username, password }),

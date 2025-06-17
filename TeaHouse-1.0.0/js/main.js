@@ -53,7 +53,7 @@
   });
 
   // Product carousel
-  const API_URL = "http://localhost:8080/api/products";
+  const API_URL = "https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/products";
 
   fetch(API_URL)
     .then((res) => res.json())
@@ -106,7 +106,7 @@
 })(jQuery);
 
 // store index
-fetch("http://localhost:8080/api/products/top3")
+fetch("https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/products/top3")
   .then((res) => res.json())
   .then((data) => {
     const container = document.getElementById("top3Products");
@@ -151,7 +151,7 @@ fetch("http://localhost:8080/api/products/top3")
   });
 
 // store
-fetch("http://localhost:8080/api/products/all")
+fetch("https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/products/all")
   .then((res) => res.json())
   .then((data) => {
     const container = document.getElementById("allProduct");

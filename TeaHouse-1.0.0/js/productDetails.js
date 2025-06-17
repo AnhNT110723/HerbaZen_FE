@@ -53,7 +53,7 @@
   });
 
   // Product carousel
-  const API_URL = "http://localhost:8080/api/products";
+  const API_URL = "https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/products";
 
   fetch(API_URL)
     .then((res) => res.json())
@@ -137,7 +137,7 @@ var p;
 
 // product detail
 if (productId) {
-  fetch(`http://localhost:8080/api/products/${productId}`)
+  fetch(`https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/products/${productId}`)
     .then((res) => res.json())
     .then((product) => {
       p = product;
@@ -378,3 +378,5 @@ document.getElementById("buyNowBtn").addEventListener("click", function () {
   // Chuyển đến trang thanh toán
   window.location.href = "checkout.html";
 });
+
+

@@ -11,7 +11,7 @@ function formatDate(dateStr) {
 }
 
 function loadOrderCounts() {
-  fetch("http://localhost:8080/countByStatus")
+  fetch("https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/countByStatus")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Lỗi khi lấy số lượng hóa đơn");
@@ -57,7 +57,7 @@ function fetchOrdersByStatus(status) {
   container.innerHTML = "<p>Đang tải đơn hàng...</p>";
 
   axios
-    .get(`http://localhost:8080/byStatus?status=${status}`)
+    .get(`https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/byStatus?status=${status}`)
     .then((res) => {
       const orders = res.data;
       if (!Array.isArray(orders) || orders.length === 0) {
@@ -268,7 +268,7 @@ function confirmOrder(orderId) {
   }).then((result) => {
     if (result.isConfirmed) {
       axios
-        .put(`http://localhost:8080/api/guest-orders/${orderId}/confirm`)
+        .put(`https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/guest-orders/${orderId}/confirm`)
         .then(() => {
           Swal.fire("Thành công", "Đơn hàng đã được xác nhận.", "success");
           fetchOrdersByStatus(1);
@@ -312,7 +312,7 @@ function cancelOrder(orderId) {
     if (result.isConfirmed) {
       const reason = result.value;
       axios
-        .put(`http://localhost:8080/api/guest-orders/${orderId}/cancel`, null, {
+        .put(`https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/guest-orders/${orderId}/cancel`, null, {
           params: { reason: reason },
         })
         .then(() => {
@@ -340,7 +340,7 @@ function markAsDelivered(orderId) {
   }).then((result) => {
     if (result.isConfirmed) {
       axios
-        .put(`http://localhost:8080/api/guest-orders/${orderId}/mark-delivered`)
+        .put(`https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites.net/api/guest-orders/${orderId}/mark-delivered`)
         .then(() => {
           Swal.fire("Thành công", "Đơn đã được đánh dấu là đã giao", "success");
           fetchOrdersByStatus(2); // Refresh lại danh sách đang giao
