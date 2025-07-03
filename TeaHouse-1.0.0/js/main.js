@@ -62,9 +62,13 @@
 
       data.forEach((p) => {
         const html = `
-          <a href="ProductDetails.html?id=${p.id}" class="d-block product-item rounded">
+           <a href="ProductDetails.html?id=${p.id}" class="d-block product-item rounded">
             <img src="${p.imageUrl}" alt="${p.name}" />
             <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+              <div class="price-container mb-3">
+                <span class="price-amount">${p.price.toLocaleString()}</span>
+                <span class="currency">₫</span>
+            </div>
               <h4 class="text-primary">${p.name}</h4>
               <span class="text-body">${p.description}</span>
             </div>
@@ -176,12 +180,12 @@ fetch("https://herbaltea-backend-erfmb8a8ddbfdyfc.southeastasia-01.azurewebsites
                       data-id="${p.id}" data-name="${p.name}" data-price="${
         p.price
       }"
-                      data-image="${p.imageUrl}">
-                Add To Cart <i class="fa fa-shopping-cart"></i>
+                       data-image="${p.imageUrl}">
+                Thêm vào giỏ hàng <i class="fa fa-shopping-cart"></i>
               </button>
               <a href="ProductDetails.html?id=${p.id}"
                  class="btn btn-primary rounded-pill py-2 px-4 m-2">
-                More Detail <i class="fa fa-arrow-right ms-2"></i>
+                Xem chi tiết <i class="fa fa-arrow-right ms-2"></i>
               </a>
             </div>
           </div>
